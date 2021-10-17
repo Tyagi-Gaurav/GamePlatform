@@ -1,0 +1,22 @@
+buildscript {
+    repositories {
+        mavenLocal()
+        mavenCentral()
+        gradlePluginPortal()
+        maven { url "https://plugins.gradle.org/m2/" }
+    }
+}
+
+plugins {
+    id 'pl.allegro.tech.build.axion-release' version '1.13.3'
+}
+
+//apply from: 'gradle/root.gradle'
+
+defaultTasks 'clean', 'check', 'build'
+
+scmVersion {
+    tag {
+        prefix = 'GamePlatform'
+    }
+}
